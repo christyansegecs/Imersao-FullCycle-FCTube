@@ -1,0 +1,7 @@
+go mod init imersaofc
+docker volume create external-storage
+docker compose up -d
+docker compose exec -it go_app_dev bash
+cd /app/
+go run cmd/videoconverter/main.go
+go mod tidy
